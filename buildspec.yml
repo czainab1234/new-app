@@ -1,0 +1,19 @@
+version: 0.1
+
+phases:
+  install:
+    runtime-versions:
+        nodejs: 10
+    commands:
+        - echo Installing source NPM dependencies...
+        - npm install
+        - npm install -g @angular/cli
+  build:
+    commands:
+        - echo Build started 
+        - ng build
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'dist/appspec.yml*'
+    discard-paths: yes
